@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>Toggle Button</h1>
+    </div>
+    <div class="container">
+        <div id="toggle-btn">
+            <i class="fa-regular fa-face-smile" id="icon"></i>
+        </div>
+        <div class="text">OFF</div>
+    </div>
+    <!--    Script for Toggle Button    -->
+    <script>
+
+        let toggleBtn = document.getElementById("toggle-btn");
+        let icon = document.getElementById("icon");
+        let text = document.querySelector(".text");
+        
+        // button onclick function
+        toggleBtn.onclick = function() {
+            toggleBtn.classList.toggle('active')
+            // emoji toggle
+            icon.classList.toggle("fa-face-frown") 
+            icon.classList.toggle("fa-face-smile")
+
+            if(toggleBtn.classList.contains("active")) {
+                text.innerHTML = "ON";
+            }
+            else {
+                text.innerHTML = "OFF";
+            }
+        }
+        </script>
+</body>
+</html>
